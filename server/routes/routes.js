@@ -2,12 +2,13 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var User = require('../../models/User')
+var Team = require('../../models/Team')
 
 router.get('/', function (req, res) {
   res.render('index')
 });
 
-router.route('/insert')
+router.route('/insertUser')
   .post(function (req, res) {
     var user = new User();
     user.userName = req.body.userName;
@@ -25,6 +26,20 @@ router.route('/insert')
     });
   })
 
+  router.route('/insertTeam')
+  .post(function (req, res) {
+    var Team = new Team();
+    team.teamName = req.body.teamName;
+    team.numPlayers = req.body.numPlayers;
+
+    team.save(function (err) {
+      if (err)
+        res.send(err);
+      res.send('Expense successfully added!');
+    });
+  })
+
+  
 // router.route('/update')
 //   .post(function (req, res) {
 //     const doc = {

@@ -82,7 +82,7 @@ class Add extends React.Component {
   }
 
   insertNewUser(e) {
-    axios.post('/insert',
+    axios.post('/insertUser',
       querystring.stringify({
         userName: e.state.userName,
         passWord: e.state.passWord, 

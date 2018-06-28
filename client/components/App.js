@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import Add from './Add'
+import TeamAdd from './TeamAdd'
 import '../css/App.css';
 
 // import React, { Component, Fragment } from "react";
@@ -40,6 +41,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
+        <TeamAdd />
         <Add selectedRank={this.state.selectedRank} selectedRole={this.state.selectedRole} selectedServer={this.state.selectedServer} />
         {/* <table>
           <thead>
